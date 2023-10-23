@@ -36,16 +36,23 @@ public class ProductService {
 
 
     // get products with authentication
-    public List<Products> getProductsByDate(LocalDate date, AuthInput authInput) {
-        if (authTokenService.authenticate(authInput)) {
+//    public List<Products> getProductsByDate(LocalDate date, AuthInput authInput) {
+//        if (authTokenService.authenticate(authInput)) {
+//           return  productRepo.findProductsByDate(date);
+//        }
+//        return null;
+//    }
+
+        public List<Products> getProductsByDate(LocalDate date, String email, String tokenVal) {
+        if (authTokenService.productAuthenticate(email, tokenVal)) {
            return  productRepo.findProductsByDate(date);
         }
         return null;
     }
 
+
     // get products without authentication
     public List<Products> getProductsByDateNonAuth(LocalDate date){
-
         return productRepo.findProductsByDate(date);
     }
 

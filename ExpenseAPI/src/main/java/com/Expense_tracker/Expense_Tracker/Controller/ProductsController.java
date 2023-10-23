@@ -32,9 +32,14 @@ public class ProductsController {
     }
 
     //    Get Products
-    @PostMapping("/ProductsByDate")
-    public List<Products> getProductsByDate(@Valid @RequestBody AuthInput authInput, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
-        return productService.getProductsByDate(date, authInput);
+//    @PostMapping("/ProductsByDate")
+//    public List<Products> getProductsByDate(@Valid @RequestBody AuthInput authInput, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+//        return productService.getProductsByDate(date, authInput);
+//    }
+
+    @GetMapping("/ProductsByDate")
+    public List<Products> getProductsByDate(@Valid @RequestParam String email, @RequestParam String tokenVal, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+        return productService.getProductsByDate(date, email,tokenVal);
     }
 
     @GetMapping("/ProductsByDateNonAuth")
