@@ -11,4 +11,6 @@ import java.util.List;
 public interface ProductRepo extends JpaRepository<Products, Integer> {
     List<Products> findProductsByDate(LocalDate date);
 
+  //  void deleteByDateAddedBefore(LocalDate threeMonthsAgo);
+
 }

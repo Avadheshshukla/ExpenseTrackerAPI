@@ -34,15 +34,25 @@ public class ProductService {
         return "Authentication failed. Invalid token or email.";
     }
 
+
+    // get products with authentication
     public List<Products> getProductsByDate(LocalDate date, AuthInput authInput) {
         if (authTokenService.authenticate(authInput)) {
            return  productRepo.findProductsByDate(date);
         }
         return null;
     }
+
+    // get products without authentication
     public List<Products> getProductsByDateNonAuth(LocalDate date){
+
         return productRepo.findProductsByDate(date);
     }
 
 
+
+//  // Auto-delete the product it its older than 3 months
+//    public void deleteOldProducts(LocalDate threeMonthsAgo) {
+//        productRepo.deleteByDateAddedBefore(threeMonthsAgo);
+//    }
 }

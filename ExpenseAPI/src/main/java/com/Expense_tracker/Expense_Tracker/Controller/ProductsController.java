@@ -24,11 +24,6 @@ public class ProductsController {
     @Autowired
     ProductService productService;
 
-//    @Autowired
-//    UserService userService;
-
-    @Autowired
-    ProductRepo productRepo;
 
     // add products
     @PostMapping("/Product")
@@ -49,11 +44,11 @@ public class ProductsController {
 
 
 
-//    // Auto delete products which is older than 3 months
+    // Auto delete products which is older than 3 months
 //      @Scheduled(cron = "0 0 0 1 * ?") // Runs at midnight on the 1st day of every month
 //       public void deleteOldProducts() {
 //        LocalDate threeMonthsAgo = LocalDate.now().minusMonths(3);
-//          productRepo.deleteByDateAddedBefore(threeMonthsAgo);
+//          productService.deleteByDateAddedBefore(threeMonthsAgo);
 //}
 
 }
