@@ -16,7 +16,7 @@ public class EmailService {
     User user;
 
     private static final String EMAIL_USERNAME = "avadheshshukla1636@gmail.com";
-    private static final String EMAIL_PASSWORD = "cfki ibyv mwxo amop";
+    private static final String EMAIL_PASSWORD = "#####";
 
     public static boolean sendEmail(String toEmail, String subject, String body){
         Properties properties = new Properties();
